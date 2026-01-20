@@ -1,149 +1,216 @@
-/* Custom Dark Theme Styles */
+/* GENERAL STYLES */
+* {
+    box-sizing: border-box; /* Ensures padding doesn't break layout */
+}
+
 body {
-  font-family: 'Open Sans', sans-serif;
-  color: #e0e0e0; /* Light grey text */
-  background-color: #121212; /* Dark background */
-  margin: 0;
-  padding: 0;
-  line-height: 1.6;
+    font-family: 'Raleway', sans-serif; /* Specified Body Font */
+    color: #333;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
 }
 
+/* TYPOGRAPHY */
 h1, h2, h3, h4, nav {
-  font-family: 'Roboto', sans-serif;
-  font-weight: 700;
-  text-transform: uppercase;
-  color: #ffffff;
+    font-family: 'Oswald', sans-serif; /* Specified Header Font */
+    font-weight: 400;
+    text-transform: uppercase;
+    margin-bottom: 10px;
 }
 
-/* Header with a pop of color */
-header.primary {
-  background: #1f1f1f;
-  padding: 40px 0;
-  text-align: center;
-  border-bottom: 3px solid #00d4ff; /* Cyan accent */
+h1 {
+    font-size: 3rem;
+    line-height: 1.2;
+    margin: 20px 0;
 }
 
-.subtitle {
-  font-size: 1rem;
-  color: #00d4ff; /* Cyan accent */
-  letter-spacing: 2px;
+h2 {
+    font-size: 2rem;
+    border-bottom: 2px solid #ddd;
+    padding-bottom: 10px;
+    margin-top: 40px;
 }
 
+a {
+    text-decoration: none;
+    color: #2c3e50;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #3498db; /* Accent color on hover */
+}
+
+/* LAYOUT HELPERS */
 .wrapper {
-  max-width: 1026px;
-  margin: 0 auto;
-  padding: 0 20px;
+    max-width: 1026px; /* Width specified in template */
+    margin: 0 auto;
+    padding: 0 20px;
 }
 
-/* Image styling */
+/* HEADER SECTION */
+header.primary {
+    background: #fff;
+    padding: 30px 0;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+}
+
 #logo {
-  border-radius: 50%; /* Makes your profile pic a circle */
-  width: 150px;
-  height: 150px;
-  object-fit: cover;
-  border: 4px solid #00d4ff;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%; /* Circular Profile Image */
+    object-fit: cover;
+    border: 5px solid #eee;
+    margin-bottom: 20px;
 }
 
-/* Nav links */
+/* NAVIGATION */
 nav ul {
-  list-style-type: none;
-  padding: 0;
-  margin-top: 20px;
+    padding: 0;
+    list-style: none;
+    margin: 20px 0;
 }
+
 nav ul li {
-  display: inline-block;
-  margin: 0 15px;
+    display: inline-block;
+    margin: 0 15px;
 }
+
 nav a {
-  text-decoration: none;
-  color: #e0e0e0;
-  font-size: 1.1rem;
-  transition: color 0.3s ease;
-}
-nav a:hover {
-  color: #00d4ff;
+    font-size: 1.2rem;
+    font-weight: bold;
 }
 
-/* Project Cards */
+/* HERO TEXT */
+.hero-text {
+    margin-top: 30px;
+}
+
+/* PROJECTS SECTION */
 .featured {
-  background: #1f1f1f;
-  padding: 20px;
-  border-radius: 8px;
-  margin-bottom: 40px;
-  border-left: 5px solid #00d4ff;
+    background: #fff;
+    padding: 20px;
+    margin-bottom: 40px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
 }
 
-.featured-img-placeholder {
-  background-color: #333;
-  height: 300px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #666;
-  margin-bottom: 20px;
-  border-radius: 4px;
+.btn {
+    display: inline-block;
+    background: #333;
+    color: #fff;
+    padding: 10px 20px;
+    margin-top: 10px;
+    border-radius: 4px;
 }
 
-.column.one-third {
-  background: #1f1f1f;
-  padding: 20px;
-  box-sizing: border-box; /* Fixes padding issues */
-  border-radius: 8px;
-  transition: transform 0.2s;
+.btn:hover {
+    background: #555;
+    color: #fff;
 }
 
-.column.one-third:hover {
-  transform: translateY(-5px); /* Slight lift effect */
-  background: #252525;
-}
-
-/* Layout Grids */
+/* GRID SYSTEM */
 .grid {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px; /* Modern spacing */
-  justify-content: space-between;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.column {
+    background: #fff;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
 }
 
 .column.one-third {
-  width: 31%; /* Adjusted for gap */
-}
-
-/* Skills List */
-.skill-list {
-  list-style: none;
-  padding: 0;
-}
-.skill-list li {
-  background: #333;
-  margin-bottom: 10px;
-  padding: 10px;
-  border-radius: 4px;
-}
-.skill-list i {
-  color: #00d4ff;
-  margin-right: 10px;
-}
-
-/* Footer */
-footer {
-  text-align: center;
-  padding: 20px 0;
-  background: #000;
-  color: #666;
-  font-size: 0.9rem;
-  margin-top: 40px;
-}
-
-hr {
-  border: 0;
-  height: 1px;
-  background: #333;
-  margin: 40px 0;
+    width: 32%; /* Fits 3 items in a row */
 }
 
 .two-columns {
-  display: flex;
-  justify-content: space-between;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
 }
-.column.two-thirds { width: 65%; }
+
+.column.two-thirds {
+    width: 65%;
+    background: transparent;
+    box-shadow: none;
+    padding-left: 0;
+}
+
+.two-columns .column.one-third {
+    width: 32%;
+    background: transparent;
+    box-shadow: none;
+}
+
+/* IMAGE PLACEHOLDERS */
+.placeholder-img {
+    background-color: #e0e0e0;
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #777;
+    margin-bottom: 15px;
+    border-radius: 4px;
+}
+
+.featured-img {
+    height: 350px; /* Taller image for featured project */
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* CONTACT & FOOTER */
+.contact-info {
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+}
+
+.socials i {
+    margin: 0 10px;
+    color: #555;
+    cursor: pointer;
+}
+
+.socials i:hover {
+    color: #000;
+}
+
+footer {
+    text-align: center;
+    padding: 40px 0;
+    background: #333;
+    color: #fff;
+    margin-top: 50px;
+}
+
+hr {
+    border: 0;
+    height: 1px;
+    background: #ccc;
+    margin: 50px 0;
+}
+
+/* RESPONSIVE MEDIA QUERY */
+@media (max-width: 768px) {
+    .column.one-third, 
+    .column.two-thirds {
+        width: 100%; /* Stack everything on mobile */
+    }
+    
+    .two-columns {
+        flex-direction: column;
+    }
+    
+    h1 { font-size: 2rem; }
+}
