@@ -1,216 +1,150 @@
-/* GENERAL STYLES */
-* {
-    box-sizing: border-box; /* Ensures padding doesn't break layout */
-}
-
+/* GENERAL RESET & BODY */
 body {
-    font-family: 'Raleway', sans-serif; /* Specified Body Font */
-    color: #333;
-    background-color: #f4f4f4;
-    margin: 0;
-    padding: 0;
-    line-height: 1.6;
+  margin: 0;
+  padding: 0;
+  [cite_start]/* PDF requires Raleway for body copy [cite: 153, 157] */
+  font-family: 'Raleway', sans-serif;
+  color: #333; [cite_start]/* [cite: 158] */
+  line-height: 1.6;
 }
 
-/* TYPOGRAPHY */
+/* HEADERS & NAVIGATION TYPOGRAPHY */
+[cite_start]/* PDF requires Oswald for headers and nav [cite: 153, 160] */
 h1, h2, h3, h4, nav {
-    font-family: 'Oswald', sans-serif; /* Specified Header Font */
-    font-weight: 400;
-    text-transform: uppercase;
-    margin-bottom: 10px;
+  font-family: 'Oswald', sans-serif; [cite_start]/* [cite: 161] */
+  font-weight: 400; [cite_start]/* [cite: 162] */
+  text-transform: uppercase; [cite_start]/* [cite: 163] */
+  margin-top: 0;
 }
 
-h1 {
-    font-size: 3rem;
-    line-height: 1.2;
-    margin: 20px 0;
-}
-
-h2 {
-    font-size: 2rem;
-    border-bottom: 2px solid #ddd;
-    padding-bottom: 10px;
-    margin-top: 40px;
-}
-
-a {
-    text-decoration: none;
-    color: #2c3e50;
-    transition: color 0.3s ease;
-}
-
-a:hover {
-    color: #3498db; /* Accent color on hover */
-}
-
-/* LAYOUT HELPERS */
+/* LAYOUT WRAPPER */
+[cite_start]/* PDF specifies wrapper keeps content to 1026px wide and centered [cite: 346] */
 .wrapper {
-    max-width: 1026px; /* Width specified in template */
-    margin: 0 auto;
-    padding: 0 20px;
+  max-width: 1026px;
+  margin: 0 auto;
+  padding: 0 20px;
 }
 
 /* HEADER SECTION */
 header.primary {
-    background: #fff;
-    padding: 30px 0;
-    text-align: center;
-    border-bottom: 1px solid #ddd;
+  background: #eee; /* Light grey background for contrast */
+  padding: 20px 0;
+  text-align: center;
+  border-bottom: 2px solid #ccc;
 }
 
 #logo {
-    width: 150px;
-    height: 150px;
-    border-radius: 50%; /* Circular Profile Image */
-    object-fit: cover;
-    border: 5px solid #eee;
-    margin-bottom: 20px;
+  /* PDF example shows a square logo, but you can adjust borders here */
+  border: 1px solid #999; 
 }
 
 /* NAVIGATION */
 nav ul {
-    padding: 0;
-    list-style: none;
-    margin: 20px 0;
+  list-style-type: none;
+  padding: 0;
+  margin: 20px 0;
 }
 
 nav ul li {
-    display: inline-block;
-    margin: 0 15px;
+  display: inline-block;
+  margin: 0 15px;
 }
 
 nav a {
-    font-size: 1.2rem;
-    font-weight: bold;
+  text-decoration: none;
+  color: #333;
+  font-size: 1.2rem;
+  font-weight: bold;
 }
 
-/* HERO TEXT */
-.hero-text {
-    margin-top: 30px;
+nav a:hover {
+  color: #777; /* Simple hover effect */
 }
 
-/* PROJECTS SECTION */
+/* MAIN TITLES */
+h1 {
+  font-size: 3rem;
+  margin-top: 20px;
+  line-height: 1.2;
+}
+
+h2 {
+  font-size: 2rem;
+  border-bottom: 2px solid #333;
+  padding-bottom: 10px;
+  margin-bottom: 30px;
+}
+
+/* FEATURED PROJECT */
 .featured {
-    background: #fff;
-    padding: 20px;
-    margin-bottom: 40px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+  background-color: #f9f9f9;
+  padding: 20px;
+  margin-bottom: 40px;
+  border: 1px solid #eee;
 }
 
-.btn {
-    display: inline-block;
-    background: #333;
-    color: #fff;
-    padding: 10px 20px;
-    margin-top: 10px;
-    border-radius: 4px;
-}
-
-.btn:hover {
-    background: #555;
-    color: #fff;
+/* IMAGES */
+[cite_start]/* PDF mentions the template is responsive [cite: 42] */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin-bottom: 15px;
 }
 
 /* GRID SYSTEM */
+[cite_start]/* Used for the "one-third" columns mentioned in PDF [cite: 280] */
 .grid {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
+  display: flex;
+  flex-wrap: wrap; /* Allows stacking on small screens */
+  justify-content: space-between;
 }
 
 .column {
-    background: #fff;
-    padding: 20px;
-    margin-bottom: 20px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+  margin-bottom: 20px;
 }
 
 .column.one-third {
-    width: 32%; /* Fits 3 items in a row */
-}
-
-.two-columns {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
+  width: 32%; /* Fits 3 items in a row with spacing */
 }
 
 .column.two-thirds {
-    width: 65%;
-    background: transparent;
-    box-shadow: none;
-    padding-left: 0;
+  width: 65%; /* Fits main content in "About" section */
 }
 
-.two-columns .column.one-third {
-    width: 32%;
-    background: transparent;
-    box-shadow: none;
+/* Two Column Layout for About/Skills */
+.two-columns {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
 }
 
-/* IMAGE PLACEHOLDERS */
-.placeholder-img {
-    background-color: #e0e0e0;
-    height: 200px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #777;
-    margin-bottom: 15px;
-    border-radius: 4px;
+/* CONTACT SECTION */
+#contact {
+  text-align: center;
+  margin-top: 50px;
+  background: #f4f4f4;
+  padding: 40px 20px;
 }
 
-.featured-img {
-    height: 350px; /* Taller image for featured project */
-}
-
-img {
-    max-width: 100%;
-    height: auto;
-    display: block;
-}
-
-/* CONTACT & FOOTER */
-.contact-info {
-    font-size: 1.1rem;
-    margin-bottom: 20px;
-}
-
-.socials i {
-    margin: 0 10px;
-    color: #555;
-    cursor: pointer;
-}
-
-.socials i:hover {
-    color: #000;
-}
-
+/* FOOTER */
 footer {
-    text-align: center;
-    padding: 40px 0;
-    background: #333;
-    color: #fff;
-    margin-top: 50px;
+  text-align: center;
+  padding: 20px 0;
+  background: #333;
+  color: #fff;
+  margin-top: 40px;
 }
 
-hr {
-    border: 0;
-    height: 1px;
-    background: #ccc;
-    margin: 50px 0;
-}
-
-/* RESPONSIVE MEDIA QUERY */
+/* RESPONSIVE BREAKPOINT */
+[cite_start]/* Ensures mobile first approach mentioned in PDF [cite: 42] */
 @media (max-width: 768px) {
-    .column.one-third, 
-    .column.two-thirds {
-        width: 100%; /* Stack everything on mobile */
-    }
-    
-    .two-columns {
-        flex-direction: column;
-    }
-    
-    h1 { font-size: 2rem; }
+  .column.one-third, 
+  .column.two-thirds {
+    width: 100%; /* Stack columns on mobile */
+  }
+  
+  .two-columns {
+    flex-direction: column;
+  }
 }
